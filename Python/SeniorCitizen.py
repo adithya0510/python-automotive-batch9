@@ -5,7 +5,7 @@ class SeniorCitizen:
         self.age = age
         self.p = principal
         self.t = time
-        self.r = 8   # 8% interest
+        self.r = 8   
 
     # 2. Check age
     def check_age(self):
