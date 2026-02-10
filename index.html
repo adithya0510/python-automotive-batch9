@@ -2,92 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pavan Adithya | QR Info</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Details</title>
 
     <style>
-        /* RESET */
-        * {
+        html, body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", sans-serif;
+            height: 100%;
+            font-family: monospace;
+            color: #ffeaea;
+            overflow: hidden;
         }
 
-        /* BACKGROUND */
+        /* Animated brown → burgundy background */
         body {
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+
             background:
-                radial-gradient(circle at center,
-                    rgba(128, 0, 32, 0.55),
-                    #050000 70%);
-            overflow: hidden;
-            color: #fff;
+                radial-gradient(
+                    circle at center,
+                    #4a1f1f 0%,
+                    #3a1717 40%,
+                    #2a1414 65%,
+                    #1f1010 100%
+                );
+
+            animation: bgMove 12s ease-in-out infinite alternate;
         }
 
-        /* MOVING LINES */
-        .lines {
-            position: absolute;
-            width: 100%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                to bottom,
-                rgba(0, 255, 140, 0.08),
-                rgba(0, 255, 140, 0.08) 1px,
-                transparent 1px,
-                transparent 25px
-            );
-            animation: moveLines 12s linear infinite;
-        }
-        @keyframes moveLines {
-            from { transform: translateY(0); }
-            to   { transform: translateY(-50%); }
+        @keyframes bgMove {
+            0% {
+                background-position: center;
+            }
+            100% {
+                background-position: top left;
+            }
         }
 
-        /* CONTENT CARD */
-        .card {
-            position: relative;
-            z-index: 2;
-            background: rgba(0, 0, 0, 0.55);
-            padding: 30px 40px;
-            border-radius: 14px;
+        /* Center card */
+        .box {
+            border: 1.5px solid rgba(255, 120, 120, 0.6);
+            padding: 35px 60px;
             text-align: center;
+            font-size: 22px;
+            line-height: 1.8;
+
+            background: rgba(60, 20, 20, 0.55);
             backdrop-filter: blur(6px);
-            box-shadow: 0 0 25px rgba(128, 0, 32, 0.5);
+
+            box-shadow:
+                0 0 25px rgba(140, 30, 30, 0.7),
+                inset 0 0 15px rgba(120, 20, 20, 0.5);
+
+            animation: glow 4s ease-in-out infinite alternate;
         }
 
-        .card h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            color: #ffb3c6;
-        }
-
-        .card p {
-            font-size: 16px;
-            margin: 6px 0;
-            color: #e6e6e6;
-        }
-
-        .highlight {
-            color: #7CFCB5;
-            font-weight: 600;
+        @keyframes glow {
+            from {
+                box-shadow:
+                    0 0 18px rgba(120, 30, 30, 0.6),
+                    inset 0 0 10px rgba(100, 20, 20, 0.4);
+            }
+            to {
+                box-shadow:
+                    0 0 35px rgba(180, 50, 50, 0.9),
+                    inset 0 0 18px rgba(160, 40, 40, 0.7);
+            }
         }
     </style>
 </head>
+
 <body>
-
-    <!-- Animated Background -->
-    <div class="lines"></div>
-
-    <!-- Content -->
-    <div class="card">
-        <h1>Pavan Adithya</h1>
-        <p>Batch: <span class="highlight">Python Automotive – Batch 9</span></p>
-        <p>ID: <span class="highlight">PA0510</span></p>
+    <div class="box">
+        Name: Pavan Adithya<br>
+        Batch: 25SUB4527_AutomotiveTesting<br>
+        User ID: 55937
     </div>
-
 </body>
 </html>
