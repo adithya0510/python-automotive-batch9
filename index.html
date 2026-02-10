@@ -2,50 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>QR Details</title>
+    <title>Pavan Adithya | QR Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
+        /* RESET */
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        /* BACKGROUND */
+        body {
             height: 100vh;
-            font-family: monospace;
             display: flex;
             justify-content: center;
             align-items: center;
+            background:
+                radial-gradient(circle at center,
+                    rgba(128, 0, 32, 0.55),
+                    #050000 70%);
+            overflow: hidden;
+            color: #fff;
+        }
 
-            /* Burgundy center, dark edges */
-            background: radial-gradient(
-                circle at center,
-                #3b0a0a 0%,
-                #1a0505 45%,
-                #000000 75%
+        /* MOVING LINES */
+        .lines {
+            position: absolute;
+            width: 100%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 255, 140, 0.08),
+                rgba(0, 255, 140, 0.08) 1px,
+                transparent 1px,
+                transparent 25px
             );
-
-            color: #e6cfcf;
+            animation: moveLines 12s linear infinite;
+        }
+        @keyframes moveLines {
+            from { transform: translateY(0); }
+            to   { transform: translateY(-50%); }
         }
 
-        .box {
-            border: 1px solid #7a2a2a;
-            padding: 30px 50px;
+        /* CONTENT CARD */
+        .card {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.55);
+            padding: 30px 40px;
+            border-radius: 14px;
             text-align: center;
-            font-size: 22px;
-            background: rgba(0, 0, 0, 0.35);
-            box-shadow: 0 0 25px rgba(59, 10, 10, 0.6);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 25px rgba(128, 0, 32, 0.5);
         }
 
-        .box p {
-            margin: 12px 0;
+        .card h1 {
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: #ffb3c6;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin: 6px 0;
+            color: #e6e6e6;
+        }
+
+        .highlight {
+            color: #7CFCB5;
+            font-weight: 600;
         }
     </style>
 </head>
-
 <body>
 
-<div class="box">
-    <p>Name: Pavan Adithya</p>
-    <p>Batch: 25SUB4527_AutomotiveTesting</p>
-    <p>User ID: 55937</p>
-</div>
+    <!-- Animated Background -->
+    <div class="lines"></div>
+
+    <!-- Content -->
+    <div class="card">
+        <h1>Pavan Adithya</h1>
+        <p>Batch: <span class="highlight">Python Automotive – Batch 9</span></p>
+        <p>ID: <span class="highlight">PA0510</span></p>
+    </div>
 
 </body>
 </html>
