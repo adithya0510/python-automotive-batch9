@@ -1,77 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>QR Details</title>
+<meta charset="UTF-8">
+<title>QR Details</title>
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: monospace;
-            color: #ffeaea;
-            overflow: hidden;
-        }
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: monospace;
+    color: #ffecec;
+    overflow: hidden;
+}
 
-        /* Animated brown → burgundy background */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+/* === SMOOTH ANIMATED BACKGROUND === */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    #4a1f1f 0%,
-                    #3a1717 40%,
-                    #2a1414 65%,
-                    #1f1010 100%
-                );
+    background: linear-gradient(
+        135deg,
+        #2a1212,
+        #4b1c1c,
+        #2f1414
+    );
+    background-size: 300% 300%;
 
-            animation: bgMove 12s ease-in-out infinite alternate;
-        }
+    animation: bgFlow 18s ease-in-out infinite;
+}
 
-        @keyframes bgMove {
-            0% {
-                background-position: center;
-            }
-            100% {
-                background-position: top left;
-            }
-        }
+@keyframes bgFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        /* Center card */
-        .box {
-            border: 1.5px solid rgba(255, 120, 120, 0.6);
-            padding: 35px 60px;
-            text-align: center;
-            font-size: 22px;
-            line-height: 1.8;
+/* === CENTER BOX === */
+.box {
+    padding: 35px 60px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.8;
 
-            background: rgba(60, 20, 20, 0.55);
-            backdrop-filter: blur(6px);
+    border: 1.5px solid rgba(255, 120, 120, 0.6);
+    background: rgba(60, 20, 20, 0.55);
+    backdrop-filter: blur(6px);
 
-            box-shadow:
-                0 0 25px rgba(140, 30, 30, 0.7),
-                inset 0 0 15px rgba(120, 20, 20, 0.5);
+    box-shadow:
+        0 0 20px rgba(140, 30, 30, 0.6),
+        inset 0 0 12px rgba(120, 20, 20, 0.4);
 
-            animation: glow 4s ease-in-out infinite alternate;
-        }
+    animation: softGlow 4s ease-in-out infinite alternate;
+}
 
-        @keyframes glow {
-            from {
-                box-shadow:
-                    0 0 18px rgba(120, 30, 30, 0.6),
-                    inset 0 0 10px rgba(100, 20, 20, 0.4);
-            }
-            to {
-                box-shadow:
-                    0 0 35px rgba(180, 50, 50, 0.9),
-                    inset 0 0 18px rgba(160, 40, 40, 0.7);
-            }
-        }
-    </style>
+/* === SUBTLE BOX GLOW === */
+@keyframes softGlow {
+    from {
+        box-shadow:
+            0 0 18px rgba(120, 30, 30, 0.6),
+            inset 0 0 10px rgba(100, 20, 20, 0.4);
+    }
+    to {
+        box-shadow:
+            0 0 32px rgba(180, 50, 50, 0.85),
+            inset 0 0 18px rgba(160, 40, 40, 0.6);
+    }
+}
+</style>
 </head>
 
 <body>
