@@ -1,33 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>QR Details</title>
+
     <style>
         body {
             margin: 0;
             height: 100vh;
-            background: black;
-            color: #00ff00;
             font-family: monospace;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            /* Burgundy center, dark edges */
+            background: radial-gradient(
+                circle at center,
+                #3b0a0a 0%,
+                #1a0505 45%,
+                #000000 75%
+            );
+
+            color: #e6cfcf;
         }
 
         .box {
-            border: 2px solid #00ff00;
+            border: 1px solid #7a2a2a;
             padding: 30px 50px;
             text-align: center;
             font-size: 22px;
+            background: rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 25px rgba(59, 10, 10, 0.6);
+        }
+
+        .box p {
+            margin: 12px 0;
         }
     </style>
 </head>
+
 <body>
 
 <div class="box">
     <p>Name: Pavan Adithya</p>
-    <p>Batch: Batch-2026</p>
-    <p>ID: PA123</p>
+    <p>Batch: 25SUB4527_AutomotiveTesting</p>
+    <p>User ID: 55937</p>
 </div>
 
 </body>
