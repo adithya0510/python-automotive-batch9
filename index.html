@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QR Details</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: monospace;
+    color: #ffecec;
+    overflow: hidden;
+}
+
+/* === SMOOTH ANIMATED BACKGROUND === */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #2a1212,
+        #4b1c1c,
+        #2f1414
+    );
+    background-size: 300% 300%;
+
+    animation: bgFlow 18s ease-in-out infinite;
+}
+
+@keyframes bgFlow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === CENTER BOX === */
+.box {
+    padding: 35px 60px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.8;
+
+    border: 1.5px solid rgba(255, 120, 120, 0.6);
+    background: rgba(60, 20, 20, 0.55);
+    backdrop-filter: blur(6px);
+
+    box-shadow:
+        0 0 20px rgba(140, 30, 30, 0.6),
+        inset 0 0 12px rgba(120, 20, 20, 0.4);
+
+    animation: softGlow 4s ease-in-out infinite alternate;
+}
+
+/* === SUBTLE BOX GLOW === */
+@keyframes softGlow {
+    from {
+        box-shadow:
+            0 0 18px rgba(120, 30, 30, 0.6),
+            inset 0 0 10px rgba(100, 20, 20, 0.4);
+    }
+    to {
+        box-shadow:
+            0 0 32px rgba(180, 50, 50, 0.85),
+            inset 0 0 18px rgba(160, 40, 40, 0.6);
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="box">
+        Name: Pavan Adithya<br>
+        Batch: 25SUB4527_AutomotiveTesting<br>
+        User ID: 55937<br>
+        Project : AUTOSAR Sensor Validation and Signal Testing
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Output is redirected to the text file
+23 is an Odd number
